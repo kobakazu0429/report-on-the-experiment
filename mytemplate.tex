@@ -1,0 +1,361 @@
+% 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 21pt, 25pt, 30pt, 36pt, 43pt
+\documentclass[12pt,a4paper,$if(lang)$$babel-lang$,$endif$]{ltjsarticle}
+% ページの余白設定
+$if(geometry)$
+\usepackage[top=35truemm,bottom=30truemm,left=30truemm,right=30truemm]{geometry}
+$endif$
+
+% ページ全体の行間設定
+% ref: http://d.hatena.ne.jp/pureodio/20100929/1285736949
+$if(linestretch)$
+\usepackage{setspace}
+\setstretch{$linestretch$}
+$endif$
+
+$for(header-includes)$
+  $header-includes$
+$endfor$
+
+% 数式ライブラリ
+\usepackage{amssymb,amsmath}
+
+% 表組みの横幅指定やセル内の書式指定など
+\usepackage{tabularx}
+
+% 英文の印刷物では, 最初のパラグラフの字下げはしないらしいので対応
+\usepackage{indentfirst}
+
+% 不明
+\usepackage{ragged2e}
+
+% 表のセルを縦に結合
+\usepackage{multirow}
+
+% 不明
+\usepackage{gensymb}
+
+% テキストシンボル
+% ref: http://www.yamamo10.jp/yamamoto/comp/latex/make_doc/symbol/index.php#TEXTCOMP
+\usepackage{textcomp}
+
+% フォント設定
+$if(fontfamily)$
+\usepackage[$fontfamilyoptions$]{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+
+\usepackage{ifxetex,ifluatex}
+
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+\usepackage[utf8]{inputenc}
+$if(euro)$
+\usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+\ifxetex
+\usepackage{mathspec}
+\else
+\usepackage{fontspec}
+\fi
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\newcommand{\euro}{€}
+
+$if(mainfont)$
+% \setmainfont[$mainfontoptions$]{$mainfont$}
+  \setmainfont{Times New Roman}
+$endif$
+
+$if(sansfont)$
+\setsansfont[$sansfontoptions$]{$sansfont$}
+$endif$
+
+$if(monofont)$
+\setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$monofontoptions$$endif$]{$monofont$}
+$endif$
+
+$if(mathfont)$
+\setmathfont(Digits,Latin,Greek)[$mathfontoptions$]{$mathfont$}
+$endif$
+
+$if(CJKmainfont)$
+\usepackage{xeCJK}
+\setCJKmainfont[$CJKoptions$]{$CJKmainfont$}
+$endif$
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}
+            $if(hidelinks)$,hidelinks,$endif$}
+\urlstyle{same}  % don't use monospace font for urls
+
+$if(lang)$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
+$for(polyglossia-otherlangs)$
+  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
+$endfor$
+\else
+  \usepackage[shorthands=off,$babel-lang$]{babel}
+\fi
+$endif$
+
+$if(natbib)$
+\usepackage{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
+
+$if(biblatex)$
+\usepackage{biblatex}
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+$endif$
+$if(listings)$
+\usepackage{listings}
+$endif$
+$if(lhs)$
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+$endif$
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+$if(graphics)$
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+$if(indent)$
+$else$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+$endif$
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(dir)$
+\ifxetex
+  % load bidi as late as possible as it modifies e.g. graphicx
+  $if(latex-dir-rtl)$
+  \usepackage[RTLdocument]{bidi}
+  $else$
+  \usepackage{bidi}
+  $endif$
+\fi
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \TeXXeTstate=1
+  \newcommand{\RL}[1]{\beginR #1\endR}
+  \newcommand{\LR}[1]{\beginL #1\endL}
+  \newenvironment{RTL}{\beginR}{\endR}
+  \newenvironment{LTR}{\beginL}{\endL}
+\fi
+$endif$
+
+\begin{document}
+% $if(title)$
+% \maketitle
+% $endif$
+% $if(abstract)$
+% \begin{abstract}
+% $abstract$
+% \end{abstract}
+% $endif$
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+% ------------------------------------
+
+% LaTeXのタイプセットで生成されるファイル群の処理
+% .toc: \tableofcontents コマンドが記載されたときにタイプセットされる目次情報を書き出したファイル。
+$if(toc)$
+{
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+
+% .lot: \listoftable コマンドが記載されたときにタイプセットされる表情報を書き出したファイル。
+$if(lot)$
+\listoftables
+$endif$
+
+% .lof: \listoftable コマンドが記載されたときにタイプセットされる図情報を書き出したファイル。
+$if(lof)$
+\listoffigures
+$endif$
+
+% Custom template starts from here
+\newenvironment{boldtabular}{ \arrayrulewidth = 2pt }{}
+\newenvironment{narrowtabular}{ \renewcommand{\arraystretch}{0.8} }{}
+\newenvironment{titletabular}{ \renewcommand{\arraystretch}{1.1} }{}
+\newenvironment{datetabular}{ \renewcommand{\arraystretch}{1.1} }{}
+\newenvironment{templaturetabular}{ \renewcommand{\arraystretch}{1.18} }{}
+\newenvironment{report-title}{
+\centering
+  \fontsize{20pt}{20pt}\selectfont
+}{}
+\fontsize{14pt}{28pt}\selectfont
+
+\begin{center}
+  \begin{report-title}
+    \textbf{Report on the Experiment}
+  \end{report-title}
+
+  \vspace{10mm}
+
+  \textbf{No.} \underline{\textbf{$metadata.reportInfo.reportNo$}}\\
+
+  \vspace{10mm}
+
+  \textbf{Subject} \underline{\textbf{$metadata.reportInfo.subject$}}\\
+
+  \vspace{10mm}
+
+  \textbf{Date} \underline{\textbf{$metadata.others.date$}}\\
+
+  \vspace{10mm}
+
+  \textbf{Weather} \underline{\textbf{    $metadata.others.weather$    }}
+  \textbf{Temp} \underline{\textbf{    $metadata.others.temp$ \celsius    }}
+  \textbf{Wet} \underline{\textbf{    $metadata.others.wet$ \%    }}
+\end{center}
+
+\vspace{10mm}
+
+\begin{table}[!h]
+  \begin{flushright}
+    \begin{tabular}{rl}
+      \textbf{Class}   & \underline{\textbf{ $metadata.writer.class$ }\hspace{1cm}} \\
+      \textbf{Group}   & \underline{\textbf{ $metadata.writer.group$ }\hspace{1cm}} \\
+      \textbf{Chief}   & \underline{\textbf{ $metadata.writer.chief$ }\hspace{1cm}} \\
+      \textbf{Partner} & \underline{\textbf{ $metadata.partners.collaborator1$ }\hspace{1cm}} \\
+                       & \underline{\textbf{ $metadata.partners.collaborator2$ }\hspace{1cm}} \\
+                       & \underline{\textbf{ $metadata.partners.collaborator3$ }\hspace{1cm}} \\
+                       & \underline{\textbf{ $metadata.partners.collaborator4$ }\hspace{1cm}}
+    \end{tabular}
+  \end{flushright}
+\end{table}
+
+\vspace{15mm}
+
+\begin{table}[!h]
+  \begin{flushright}
+    \begin{tabular}{rl}
+      \textbf{No}   & \underline{\textbf{ $metadata.writer.no$ }\hspace{1cm}} \\
+      \textbf{Name} & \underline{\textbf{ $metadata.writer.name$ }\hspace{1cm}}
+    \end{tabular}
+  \end{flushright}
+\end{table}
+
+
+  % \makebox[15ex]{Censored text}\hspace{-15ex}
+  % \makebox[\textwidth]{c e n t r a l} \par
+  % \makebox[15ex]{\hrulefill}{Censored text}\hspace{-15ex}\raisebox{10pt}[20pt][30pt]
+
+  % \textbf{Partner} \makebox[3in]{\textbf{    $metadata.partners.collaborator1$    }}{\hrulefill}[c]
+  % \begin{flushright}
+  %   \textbf{Partner} \hspace{1cm} \underline{\textbf{    $metadata.partners.collaborator1$    }}\\
+  %   \underline{\textbf{    $metadata.partners.collaborator2$    }}\\
+  %   \underline{\textbf{    $metadata.partners.collaborator3$    }}\\
+  %   \underline{\textbf{    $metadata.partners.collaborator4$    }}\\
+  % \end{flushright}
+
+\vspace{10mm}
+
+\begin{center}
+  \textbf{Kure National College of Technology}
+\end{center}
+
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+\normalsize
+
+% end of custom template
+$body$
+
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+\end{document}
