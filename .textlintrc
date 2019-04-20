@@ -1,0 +1,30 @@
+{
+  "filters": {},
+  "rules": {
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
+      }
+    },
+    "preset-ja-technical-writing": {
+      "ja-no-mixed-period": {
+        "periodMark": [".", ",", "}"]
+      },
+      "no-doubled-joshi": {
+            "allow": ["に", "で", "も", "や"],
+            "separatorChars": ["。",".","?","!","？","！"]
+      }
+    },
+    "spellcheck-tech-word": true,
+    "prh": {
+      "rulePaths": [
+        "prhs/myprh.yml",
+        "prhs/prh.yml/ja/jser-info.yml",
+        "prhs/prh.yml/ja/kanji-open.yml",
+        "prhs/prh.yml/ja/spoken.yml",
+        "prhs/prh.yml/ja/typo.yml",
+        "prhs/prh.yml/ja/web+db.yml"
+      ]
+    }
+  }
+}
