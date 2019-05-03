@@ -7,6 +7,16 @@
       }
     },
     "preset-ja-technical-writing": {
+      "sentence-length": {
+        "max": 800
+      },
+      "max-kanji-continuous-len": {
+        "max": 7,
+        "allow": [
+          "倍精度浮動小数点数",
+          "出力特性測定回路"
+        ]
+      },
       "ja-no-mixed-period": {
         "periodMark": [".", ",", "}"]
       },

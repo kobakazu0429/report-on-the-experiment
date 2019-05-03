@@ -4,3 +4,8 @@ rules:
     specs:
       - from: google
         to: Google
+
+  - expected: Analog Discovery
+    specs:
+      - from: analog discovery
+        to: Analog Discovery
