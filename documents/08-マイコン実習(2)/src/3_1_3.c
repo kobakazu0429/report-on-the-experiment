@@ -1,4 +1,4 @@
-// #include "c:\work\e3exp.h"
+#include "c:\work\e3exp.h"
 
 double voltage_to_distance(double voltage);
 
@@ -13,12 +13,12 @@ int main(void) {
 
   while (1) {
     sensing_position = smp_INT();
-    converted_voltage = (double)sensing_position * (5 / 4096);
+    converted_voltage = (double)sensing_position * (double)(5. / 4096.);
     distance = voltage_to_distance(converted_voltage);
     sprintf(msg, "%8.6f", distance);
     clr_LCD();
     put_str(msg);
-    delayms(1500);
+    delayms(200);
   }
 }
 
