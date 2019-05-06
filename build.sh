@@ -20,6 +20,6 @@ array=("01-共振回路の測定" "02-インダクタンス・静電容量の測
 
 echo "Convert now : ${array[TARGET_BUILD_EXPERIMENT - 1]} - md => tex => pdf"
 
-pandoc -F pandoc-crossref "./documents/${array[TARGET_BUILD_EXPERIMENT - 1]}/report.md" -o "./documents/${array[TARGET_BUILD_EXPERIMENT - 1]}/report.pdf" --pdf-engine=lualatex --template=./mytemplate.tex -N
+pandoc -F pandoc-crossref -M "crossrefYaml=./crossref_config.yaml" "./documents/${array[TARGET_BUILD_EXPERIMENT - 1]}/report.md" -o "./documents/${array[TARGET_BUILD_EXPERIMENT - 1]}/report.pdf" --pdf-engine=lualatex --template=./mytemplate.tex -N
 
 exit 0
