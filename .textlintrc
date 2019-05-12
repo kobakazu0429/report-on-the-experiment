@@ -17,6 +17,9 @@
           "出力特性測定回路"
         ]
       },
+      "max-comma": {
+        "max": 5
+      },
       "ja-no-mixed-period": {
         "periodMark": [".", ",", "}"]
       },
