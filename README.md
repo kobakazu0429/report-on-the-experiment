@@ -44,3 +44,13 @@ So that, your report will be pdf file in the folder.
 - pandoc
 - pandoc-crossref
 - lualatex
+
+## Original Notations
+
+### Units
+
+- `$f \unit{Hz}$` -> $f [Hz]$
+
+### Roman Numbers
+
+- `\rom{1}` -> I

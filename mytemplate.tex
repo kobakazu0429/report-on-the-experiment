@@ -92,6 +92,13 @@ $endif$
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\newcommand*{\unit}[1]{\mathrm{[#1]}}
+
 \makeatletter
 \def\fps@figure{h}
 \@ifpackageloaded{hyperref}{}{%
@@ -108,6 +115,7 @@ $endif$
 }{%
     \usepackage[usenames,dvipsnames]{color}
 }
+
 \makeatother
 \hypersetup{breaklinks=true,
             bookmarks=true,
