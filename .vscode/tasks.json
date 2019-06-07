@@ -10,6 +10,8 @@
       "args": [
         "-F",
         "pandoc-crossref",
+        "-M",
+        "crossrefYaml=${workspaceFolder}/crossref_config.yaml",
         "${file}",
         "-o" ,
         "${fileDirname}/${fileBasenameNoExtension}.pdf",
