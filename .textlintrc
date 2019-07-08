@@ -18,7 +18,7 @@
         ]
       },
       "max-comma": {
-        "max": 5
+        "max": 10
       },
       "ja-no-mixed-period": {
         "periodMark": [".", ",", "}", "$"]
