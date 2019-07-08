@@ -59,7 +59,7 @@ $i_F, i_M, \tau_D$ の関係を図で表すと[@fig:002]になる.
 
 ![電力計法回路](./documents/03-単相電力の測定/images/003.JPG){#fig:003 width=100mm}
 
-いま, [@fig:003]に示す回路において交流負荷 Z に瞬時値 i, v の正弦波を入力したとき, その電力は[@eq:3.3]となる.
+いま, [@fig:003]に示す回路において交流負荷 $Z$ に瞬時値 $i, v$ の正弦波を入力したとき, その電力は[@eq:3.3]となる.
 $$p = iv$$
 i, v は電源の角周波数を $\omega$, 電圧と電流の位相差を $\varphi$ とすると,
 $$v = E_m sin  \omega t$$
@@ -69,7 +69,7 @@ $$i = I_m sin (\omega t + \varphi)$$
 $$p = iv = E_m I_m sin  \omega t sin (\omega t + \varphi) = \frac{E_m I_m}{2}\{cos \varphi - cos(2 \omega t + \varphi)\}$${#eq:3.3}
 
 となる.
-交流電力は, 瞬時電力 p の平均値であるから, これを p として積分すると,
+交流電力は, 瞬時電力 $p$ の平均値であるから, これを $p$ として積分すると,
 
 $$p = \frac{1}{2 \pi} \int_0^{2 \pi} p dt = \frac{E_m I_m}{2} cos \varphi$${#eq:3.4}
 
