@@ -21,7 +21,7 @@
         "max": 10
       },
       "ja-no-mixed-period": {
-        "periodMark": [".", ",", "}", "$"]
+        "periodMark": [".", ",", "}", "$", "真理値表", "スイッチパターン"]
       },
       "no-doubled-joshi": {
             "allow": ["に", "で", "も", "や"],
