@@ -1,0 +1,20 @@
+#include <p30F3013.h>
+
+void wait2(unsigned x) {
+  unsigned i, j;
+  for (i = 0; i < x; i++) {
+    for (j = 0; j < 65000; j++) {
+      asm("nop");
+    }
+  }
+}
+
+void main() {
+  TRISB = 0;
+  while (1) {
+    PORTB = 0x0000;
+    wait2(32);
+    PORTB = 0x0001;
+    wait2(64);
+  }
+}

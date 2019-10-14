@@ -1,0 +1,22 @@
+#include <p30F3013.h>
+
+void wait1() {
+  unsigned i, j;
+  for (i = 0; i < 64; i++) {
+    for (j = 0; j < 65000; j++) {
+      asm("nop");
+    }
+  }
+}
+
+void main() {
+  TRISB = 0;
+  int i = 0;
+  int PATTERN[4] = {24, 36, 66, 129};
+  while (1) {
+    for (i = 0; i < 4; i++) {
+      LATB = PATTERN[i];
+      wait1();
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+#include <p30F3013.h>
+
+void wait2(unsigned x) {
+  unsigned i, j;
+  for (i = 0; i < x; i++) {
+    for (j = 0; j < 65000; j++) {
+      asm("nop");
+    }
+  }
+}
+
+void main() {
+  TRISB = 0;
+  TRISBbits.TRISB8 = 1;
+
+  LATB = 0;
+  while (1) {
+    if (PORTBbits.RB8 == 0) LATB = 1;
+    else LATB = 0;
+  }
+}
