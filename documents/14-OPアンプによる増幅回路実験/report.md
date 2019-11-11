@@ -100,3 +100,50 @@ OP アンプを用いた増幅回路のシミュレーションと実験を行�
     ![+単電源の反転増幅回路と過渡解析](./documents/14-OPアンプによる増幅回路実験/images/Tina/141201.png){#fig:141201 width=80mm}
 
     ![+単電源の反転増幅回路と過渡解析 結果](./documents/14-OPアンプによる増幅回路実験/images/Tina/141202.png){width=80mm}
+
+\clearpage
+
+## Analog Discovery を用いた過渡解析実験
+
+### 反転増幅回路
+
+![$R_2 = 20k\Omega$ オシロスコープ](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/01-反転増幅/01-20k/01-1.png){#fig width=80mm}
+
+![$R_2 = 20k\Omega$ ネットワーク解析](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/01-反転増幅/01-20k/02-1.png){#fig width=80mm}
+
+![$R_2 = 47k\Omega$ オシロスコープ](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/01-反転増幅/02-47k/03-1.png){#fig width=80mm}
+
+### 非反転増幅回路
+
+![$R_2 = 10k\Omega$ オシロスコープ](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/02-非反転増幅/01-10k/01-1.png){#fig width=80mm}
+
+![$R_2 = 10k\Omega$ ネットワーク解析](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/02-非反転増幅/01-10k/02-1.png){#fig width=80mm}
+
+![$R_2 = 39k\Omega$ オシロスコープ](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/02-非反転増幅/02-39k/01-1.png){#fig width=80mm}
+
+\clearpage
+
+### ボルテージ・フォロワ回路
+
+![オシロスコープ](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/03-ボルテージ・フォロワ/01-1.png){#fig width=80mm}
+
+![ネットワーク解析](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/03-ボルテージ・フォロワ/02-1.png){#fig width=80mm}
+
+### +単電源の反転増幅回路と過渡解析
+
+![オシロスコープ](./documents/14-OPアンプによる増幅回路実験/images/AnalogDiscovery/04-単電源/01-1.png){#fig width=80mm}
+
+# 検討課題
+
+1. ボルテージ・フォロワの用途について調べよ.
+   大きく分けて 2 つあり, 1 つ目は, インピーダンス変換と呼ばれ, 信号電圧は変えずに大きな電流を流すことができる.
+   2 つ目は, 回路の分離と呼ばれ, 交流の信号を増幅度 1 倍のアンプをつなぐことで前の回路に影響を与えずに一方通行にできる.
+
+1. ネットワーク解析は Analog Discovery 内部でどのようなことが行われているか考えよ.
+   回路内で数値に変換されて, グラフとしてプロットしている.
+
+1. ネットワーク解析のゲインの値を確かめよ.
+   周波数とゲインは反比例し, $100 \unit{kHz}$ を越えたあたりからゲインが大幅に減少している.
+
+1. 総合的の考察を行え.
+   Analog Discovery を用いて得られた波形と TINA によるシミュレーションによって得られた波形はどの波形も同じ波形になっていたので実験は成功したといえる.
