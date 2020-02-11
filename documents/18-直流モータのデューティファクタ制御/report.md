@@ -50,6 +50,8 @@ metadata:
 
 ![R1:最大](./documents/18-直流モータのデューティファクタ制御/images/NewFile2.png){#fig:NewFile2 width=80mm}
 
+\clearpage
+
 ## オンオフ信号発生回路
 
 ![オンオフ信号発生回路](./documents/18-直流モータのデューティファクタ制御/images/184.JPG){#fig:184 width=80mm}
@@ -57,13 +59,15 @@ metadata:
 [@fig:184] のオンオフ信号発生回路をブレッド・ボードに組み, のこぎり波発生回路の出力を入力として, 出力波形をオシロスコープで観測した.
 オシロスコープの CH1 を input に, CH2 を LM311 の 3 番ピンに, CH3 を output につなぎ可変抵抗 R6 をドライバで調整し $V_{ref2}$ を $0, 1, 2, 3 \unit{V}$に変化させたときの波形からデューティ比を読み取った.
 
-![$V_{ref2} = 0\unit{V}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile3.png){#fig:NewFile3 width=80mm}
+![$V_{ref2} = 0\unit{V}, 100.00 \unit{\%}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile3.png){#fig:NewFile3 width=80mm}
 
-![$V_{ref2} = 1\unit{V}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile4.png){#fig:NewFile4 width=80mm}
+![$V_{ref2} = 1\unit{V},  74.71 \unit{\%}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile4.png){#fig:NewFile4 width=80mm}
 
-![$V_{ref2} = 2\unit{V}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile5.png){#fig:NewFile5 width=80mm}
+![$V_{ref2} = 2\unit{V},  36.47 \unit{\%}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile5.png){#fig:NewFile5 width=80mm}
 
-![$V_{ref2} = 3\unit{V}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile6.png){#fig:NewFile6 width=80mm}
+![$V_{ref2} = 3\unit{V},   5.88 \unit{\%}$](./documents/18-直流モータのデューティファクタ制御/images/NewFile6.png){#fig:NewFile6 width=80mm}
+
+\clearpage
 
 ## 絶縁回路とスイッチング回路
 
@@ -73,7 +77,23 @@ metadata:
 オンオフ信号の出力波形をオシロスコープで観測しながら, デューティファクタとモータの回転速度の関係を測定しグラフに描いた.
 オシロスコープの CH1 を input に, CH2 を PC817C の 1 番ピンにつなぎ波形の画像を USB にとった.
 
+![デューティファクタとモータの回転速度の関係](./documents/18-直流モータのデューティファクタ制御/images/duty-rpm.png){#fig:duty-rpm width=100mm}
+
 \clearpage
+
+| $duty$ |  $rpm$ |
+| -----: | -----: |
+|   11.5 |    0.0 |
+|   19.7 |    0.0 |
+|   29.5 |    0.0 |
+|   41.0 |    0.0 |
+|   51.5 |    0.0 |
+|   60.1 |  150.9 |
+|   71.0 |  942.3 |
+|   81.0 | 1010.0 |
+|   91.3 | 1102.0 |
+|   99.9 | 1102.0 |
+
 
 # 考察
 
