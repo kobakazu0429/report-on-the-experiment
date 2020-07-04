@@ -13,7 +13,7 @@
         "-M",
         "crossrefYaml=${workspaceFolder}/crossref_config.yaml",
         "${file}",
-        "-o" ,
+        "-o",
         "${fileDirname}/${fileBasenameNoExtension}.pdf",
         "--pdf-engine=lualatex",
         "--template=${workspaceFolder}/mytemplate.tex",
