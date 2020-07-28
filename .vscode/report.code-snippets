@@ -9,7 +9,7 @@
   "Embed Image": {
     "scope": "markdown",
     "prefix": "img",
-    "body": "![${2:subject}](./documents/04/${TM_DIRECTORY/.*\\///}/images/${1:filename}.png){#fig:${1:filename} width=80mm}"
+    "body": "![${2:subject}](./documents/04/${TM_DIRECTORY/.*\\///}/images/${1:filename}.png){#fig:${1:filename} height=50mm}"
   },
   "Call Image": {
     "scope": "markdown",
