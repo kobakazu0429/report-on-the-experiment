@@ -33,9 +33,9 @@ SCR(Silicon controlled rectifier)及び, UJT(Unijunction transistor)素子の静
 
 - $E_1$: 直流電源 PD110-5A
 - $E_2$: 直流電源菊水 PAD1K-0.2L
-- $I_P$: 直流電流計 $1 \unit{mA}$
-- $I_G$: 直流電流計 $3/10/30/100 \unit{\micro A}$
-- $E_G$: 直流電圧計 $150/300 \unit{V}$
+- $I_P$: 直流電流計 $1 \unit{mA}$ (管理番号: 25)
+- $I_G$: 直流電流計 $3/10/30/100 \unit{\micro A}$ (管理番号: 9)
+- $E_G$: 直流電圧計 $150/300 \unit{V}$ (管理番号: 35)
 - EPK: 真空管電圧計 VP-916A $1000 \unit{V}$
 - 測定用キット(R2, R3 実装)
 - $R_1$: 抵抗:$1 \unit{M \ohm}$ ベーク板に実装
@@ -46,10 +46,10 @@ SCR(Silicon controlled rectifier)及び, UJT(Unijunction transistor)素子の静
 
 - $E_1$: 直流電源 PD110-5A
 - $E_2$: 直流電源 PR36-3A
-- $I_E$: 直流電流計 $10/30/100 \unit{mA}$
-- $I_{BB}$: 直流電流計 $1/3/10/30 \unit{mA}$
-- $E_E$: 直流電圧計 $15/30 \unit{V}$
-- $E_{BB}$: 直流電圧計 $150/300 \unit{V}$
+- $I_E$: 直流電流計 $10/30/100 \unit{mA}$ (管理番号: 25)
+- $I_{BB}$: 直流電流計 $1/3/10/30 \unit{mA}$ (管理番号: 23)
+- $E_E$: 直流電圧計 $15/30 \unit{V}$ (管理番号: 20)
+- $E_{BB}$: 直流電圧計 $150/300 \unit{V}$ (管理番号: 35)
 - 測定用キット($R=1\unit{k \ohm}$ 付属)
 - $SW_1$: 電源 $E_1$ に付属のものを使用
 - $SW_2$: 直流用開閉器
