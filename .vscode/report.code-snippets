@@ -25,5 +25,20 @@
     "scope": "markdown",
     "prefix": "table, tbl",
     "body": "[@tbl:${1:id}]"
+  },
+  "prettier-ignore": {
+    "scope": "markdown",
+    "prefix": "ignore",
+    "body": "<!-- prettier-ignore-start -->\n\n${1:content}\n\n<!-- prettier-ignore-end -->"
+  },
+  "clearpage": {
+    "scope":"markdown",
+    "prefix": "clear",
+    "body": "\\clearpage"
+  },
+  "TeX Table": {
+    "scope": "markdown",
+    "prefix": "table, tbl",
+    "body": "\\begin{table}[htb]\n\\begin{center}\n${1:body}\n\\end{center}\n\\end{table}"
   }
 }
