@@ -1,5 +1,11 @@
 {
-  "filters": {},
+  "filters": {
+    "allowlist": {
+      "allow": [
+        "変調度"
+      ]
+    }
+  },
   "rules": {
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
@@ -8,7 +14,7 @@
     },
     "preset-ja-technical-writing": {
       "sentence-length": {
-        "max": 800
+        "max": 10000
       },
       "max-kanji-continuous-len": {
         "max": 7,
@@ -27,7 +33,8 @@
           "静止形無効電力補償装置",
           "電力用半導体素子",
           "公益社団法人日本電気技術者協会",
-          "単一製電源動作温度"
+          "単一製電源動作温度",
+          "被変調波出力端子"
         ]
       },
       "max-comma": {
