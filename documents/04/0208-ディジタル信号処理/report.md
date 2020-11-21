@@ -8,7 +8,7 @@ metadata:
   writer:
     class: E4
     no: 14
-    group: 5
+    group: B
     chief:
     name: 小畠 一泰
   others:
