@@ -16,6 +16,29 @@
     "prefix": "img",
     "body": "[@fig:${1:filename}]"
   },
+  "Embed 2 Column Image": {
+    "scope": "markdown",
+    "prefix": "img",
+    "body": [
+      "<!-- prettier-ignore-start -->",
+      "\\begin{figure}[htbp]\n\\begin{center}\n\\begin{tabular}{c}\n\n\\begin{minipage}{0.5\\hsize}\n\\begin{center}\n",
+      "%1\n\\begin{minipage}{0.5\\hsize}\n\\begin{center}\n\\includegraphics[keepaspectratio]{___path___}\n\\hspace{0cm} ___caption___\n\\end{center}\n\\end{minipage}\n",
+      "%2\n\\begin{minipage}{0.5\\hsize}\n\\begin{center}\n\\includegraphics[keepaspectratio]{___path___}\n\\hspace{0cm} ___caption___\n\\end{center}\n\\end{minipage}\n",
+      "\\end{tabular}\n\\end{center}\n\\caption{___all_caption___}\n\\end{figure}",
+      "<!-- prettier-ignore-end -->"
+    ]
+  },
+  "Embed 2 Column Image(Add)": {
+    "scope": "markdown",
+    "prefix": "img",
+    "body": [
+      "\\vspace{5mm}",
+      "\\begin{tabular}{c}",
+      "%3\n\\begin{minipage}{0.5\\hsize}\n\\begin{center}\n\\includegraphics[keepaspectratio]{___path___}\n\\hspace{0cm} ___caption___\n\\end{center}\n\\end{minipage}\n",
+      "%4\n\\begin{minipage}{0.5\\hsize}\n\\begin{center}\n\\includegraphics[keepaspectratio]{___path___}\n\\hspace{0cm} ___caption___\n\\end{center}\n\\end{minipage}",
+      "\\end{tabular}"
+    ]
+  },
   "Embed Table Subject": {
     "scope": "markdown",
     "prefix": "table, tbl",
