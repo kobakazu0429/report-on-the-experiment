@@ -86,25 +86,114 @@ metadata:
 
 <!-- prettier-ignore-end -->
 
-\newpage
+<!-- \newpage -->
 
-![1](./documents/04/0206-振幅変調・復調実験/images/6.1/200Hz/0.png){#fig:6.1.200Hz-0 height=50mm}
+<!-- prettier-ignore-start -->
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{c}
 
-![2](./documents/04/0206-振幅変調・復調実験/images/6.1/200Hz/1.png){#fig:6.1.200Hz-1 height=50mm}
+%1
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/200Hz/0.png}
+\hspace{0mm} [1]
+\end{center}
+\end{minipage}
 
-![3](./documents/04/0206-振幅変調・復調実験/images/6.1/200Hz/2.png){#fig:6.1.200Hz-2 height=50mm}
+%2
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/200Hz/1.png}
+\hspace{0mm} [2]
+\end{center}
+\end{minipage}
+\end{tabular}
+\caption{各信号波に対する被変調波(a)}
+\end{center}
+\end{figure}
 
-![4](./documents/04/0206-振幅変調・復調実験/images/6.1/1k/0.png){#fig:6.1.1k-0 height=50mm}
+\clearpage
 
-![5](./documents/04/0206-振幅変調・復調実験/images/6.1/1k/1.png){#fig:6.1.1k-1 height=50mm}
+\begin{figure}[htbp]
+\begin{center}
+\begin{tabular}{c}
+%3
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/200Hz/2.png}
+\hspace{0mm} [3]
+\end{center}
+\end{minipage}
 
-![6](./documents/04/0206-振幅変調・復調実験/images/6.1/1k/2.png){#fig:6.1.1k-2 height=50mm}
+%4
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/1k/0.png}
+\hspace{0mm} [4]
+\end{center}
+\end{minipage}
+\end{tabular}
 
-![7](./documents/04/0206-振幅変調・復調実験/images/6.1/5k/NewFile0.png){#fig:6.1.5k-0 height=50mm}
+\vspace{5mm}
+\begin{tabular}{c}
+%5
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/1k/1.png}
+\hspace{0mm} [5]
+\end{center}
+\end{minipage}
 
-![8](./documents/04/0206-振幅変調・復調実験/images/6.1/5k/NewFile1.png){#fig:6.1.5k-1 height=50mm}
+%6
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/1k/2.png}
+\hspace{0mm} [6]
+\end{center}
+\end{minipage}
+\end{tabular}
 
-![9](./documents/04/0206-振幅変調・復調実験/images/6.1/5k/NewFile2.png){#fig:6.1.5k-2 height=50mm}
+\vspace{5mm}
+\begin{tabular}{c}
+%7
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/5k/NewFile0.png}
+\hspace{0mm} [7]
+\end{center}
+\end{minipage}
+
+%8
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/5k/NewFile1.png}
+\hspace{0mm} [8]
+\end{center}
+\end{minipage}
+\end{tabular}
+
+\vspace{5mm}
+\begin{tabular}{c}
+%9
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\includegraphics[keepaspectratio]{./documents/04/0206-振幅変調・復調実験/images/6.1/5k/NewFile2.png}
+\hspace{0mm} [9]
+\end{center}
+\end{minipage}
+
+%10
+\begin{minipage}{0.35\hsize}
+\begin{center}
+\end{center}
+\end{minipage}
+\end{tabular}
+
+\caption{各信号波に対する被変調波(b)}
+\end{center}
+\end{figure}
+<!-- prettier-ignore-end -->
 
 \clearpage
 
@@ -168,15 +257,43 @@ metadata:
 
 1. 信号波のゲイン調節ツマミ(GAIN ADJ.)を調節し, 被変調波の変調度を変え同様に実験した.
 
-   ![KKOKOK](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile6.png>){height=50mm}
+   <!-- prettier-ignore-start -->
 
-   ![KKOKOK](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile7.png>){height=50mm}
+   <!-- TODO: エクセル `6.2(7-5kHz)` の使い方 -->
 
-   ![KKOKOK](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile8.png>){height=50mm}
+   <!-- \begin{table}[htb]
+   \begin{center}
+   \caption{5kHz における各信号波に対する被変調波の変調度}
+   \begin{tabular}{|r|r|r|r|c|}
+   \hline
+   \multicolumn{1}{c|}{\multirow{2}{_}{信号波電圧 Es{[}V{]}}} &
+   \multicolumn{2}{c|}{被変調波} &
+   \multicolumn{1}{c|}{\multirow{2}{_}{変調度{[}\%{]}}} &
+   \multirow{2}{_}{画像番号} \\ \cline{3-4}
+   \multicolumn{1}{|c|}{} &
+   \multicolumn{1}{c|}{} &
+   \multicolumn{1}{c|}{E1{[}V{]}} &
+   \multicolumn{1}{c|}{E2{[}V{]}} &
+   \multicolumn{1}{c|}{} &
+   \\ \hline
+   0.0823 & 3.88 & 2.12 & 29.33 & 7 \\ \cline{2-6}
+   0.3110 & 5.76 & 0.00 & 100.00 & 8 \\ \cline{2-6}
+   0.3670 & 6.20 & 0.32 & 90.18 & 9 \\ \hline
+   \end{tabular}
+   \end{center}
+   \end{table} -->
+
+   <!-- prettier-ignore-end -->
+
+   ![1](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile6.png>){height=50mm}
+
+   ![2](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile7.png>){height=50mm}
+
+   ![3](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile8.png>){height=50mm}
 
    \newpage
 
-   ![KKOKOK](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile9.png>){height=50mm}
+   ![4](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile9.png>){height=50mm}
 
 1. スピーカボリューム(GAIN ADJ.)を少し上げ, 違いを音で確認した結果を [@tbl:6-2] に記す.
 
