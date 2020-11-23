@@ -40,7 +40,7 @@ metadata:
 1. 変調部の信号波選択 SW を内部直流電源の DC 側に切り換えた.
 1. DMM を信号波測定端子(S1)に, オシロスコープの 1CH を被変調波出力測定端子(S2)に接続した.
 1. 電圧調節ツマミを調節し, 信号電圧を約 $-3 \unit{V}$ から $0.6 \unit{V}$ 刻みで約 $+3 \unit{V}$ まで変化させ, そのときの被変調波出力を観測し, 波形および周波数を記録した.
-1. 信号電圧と被変調波出力周波数の関係をグラフにした.
+1. 信号電圧と被変調波出力周波数の関係を [@fig:6-1graph] に示す.
 
 | 信号電圧 $V \unit{V}$ | 被変調出力の周波数 $f \unit{kHz}$ | 画像番号 |
 | --------------------: | --------------------------------: | :------: |
@@ -80,7 +80,7 @@ metadata:
 
 ![11](<./documents/04/0207-周波数変調・復調実験/images/6.1.5(4)/NewFile10.png>){#fig:filename height=50mm}
 
-![V-f](<./documents/04/0207-周波数変調・復調実験/images/6.1.5(4)/6.1graph.png>){#fig:filename height=50mm}
+![信号電圧と被変調波出力周波数のグラフ](<./documents/04/0207-周波数変調・復調実験/images/6.1.5(4)/6.1graph.png>){#fig:6-1graph height=50mm}
 
 \clearpage
 
@@ -194,11 +194,11 @@ metadata:
 
 ![11](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/NewFile11.png>){#fig:filename height=50mm}
 
-![f-BF1](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/6-3-BF1.png>){#fig:filename height=50mm}
+![被変調波出力測定端子の周波数及び BF1 の出力測定端子の電圧のグラフ](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/6-3-BF1.png>){#fig:filename height=50mm}
 
-![f-BF2](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/6-3-BF2.png>){#fig:filename height=50mm}
+![被変調波出力測定端子の周波数及び BF2 の出力測定端子の電圧のグラフ](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/6-3-BF2.png>){#fig:filename height=50mm}
 
-![V1-V2](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/6-3-V1V2.png>){#fig:filename height=50mm}
+![DMMV1とV2のグラフ](<./documents/04/0207-周波数変調・復調実験/images/6.3.4(7)/6-3-V1V2.png>){#fig:filename height=50mm}
 
 \clearpage
 
