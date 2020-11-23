@@ -257,33 +257,19 @@ metadata:
 
 1. 信号波のゲイン調節ツマミ(GAIN ADJ.)を調節し, 被変調波の変調度を変え同様に実験した.
 
-   <!-- prettier-ignore-start -->
+   | 信号波電圧 $E_s \unit{V}$ | 被変調波 $\unit{V}$  | 変調度 $\unit{％}$ | 画像番号 |
+   | ------------------------: | :------------------: | -----------------: | :------: |
+   |                      1.44 | $E_1:4.32, E_2:1.50$ |              48.45 |    1     |
 
-   <!-- TODO: エクセル `6.2(7-5kHz)` の使い方 -->
+   : 各波形の電圧及び変調度($5\unit{kHz}$) {#tbl:id}
 
-   <!-- \begin{table}[htb]
-   \begin{center}
-   \caption{5kHz における各信号波に対する被変調波の変調度}
-   \begin{tabular}{|r|r|r|r|c|}
-   \hline
-   \multicolumn{1}{c|}{\multirow{2}{_}{信号波電圧 Es{[}V{]}}} &
-   \multicolumn{2}{c|}{被変調波} &
-   \multicolumn{1}{c|}{\multirow{2}{_}{変調度{[}\%{]}}} &
-   \multirow{2}{_}{画像番号} \\ \cline{3-4}
-   \multicolumn{1}{|c|}{} &
-   \multicolumn{1}{c|}{} &
-   \multicolumn{1}{c|}{E1{[}V{]}} &
-   \multicolumn{1}{c|}{E2{[}V{]}} &
-   \multicolumn{1}{c|}{} &
-   \\ \hline
-   0.0823 & 3.88 & 2.12 & 29.33 & 7 \\ \cline{2-6}
-   0.3110 & 5.76 & 0.00 & 100.00 & 8 \\ \cline{2-6}
-   0.3670 & 6.20 & 0.32 & 90.18 & 9 \\ \hline
-   \end{tabular}
-   \end{center}
-   \end{table} -->
+   |   定数    | 電圧 $V_pp \unit{V}$ | 画像番号 |
+   | :-------: | -------------------: | :------: |
+   | $R_1 C_1$ |                 0.84 |    2     |
+   | $R_2 C_2$ |                 1.92 |    3     |
+   | $R_3 C_3$ |                 2.34 |    4     |
 
-   <!-- prettier-ignore-end -->
+   : 各組み合わせにおける各検波波形の電圧($5\unit{kHz}$) {#tbl:id}
 
    ![1](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile6.png>){height=50mm}
 
@@ -291,9 +277,9 @@ metadata:
 
    ![3](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile8.png>){height=50mm}
 
-   \newpage
-
    ![4](<./documents/04/0206-振幅変調・復調実験/images/6.2/6.2.4(7)/NewFile9.png>){height=50mm}
+
+   \newpage
 
 1. スピーカボリューム(GAIN ADJ.)を少し上げ, 違いを音で確認した結果を [@tbl:6-2] に記す.
 
