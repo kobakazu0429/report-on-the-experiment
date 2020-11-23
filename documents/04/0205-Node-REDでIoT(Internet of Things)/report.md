@@ -35,13 +35,32 @@ National Semiconductor 製の単一正電源動作温度センサ IC, LM61 を�
 
 ![ノード](<./documents/04/0205-Node-REDでIoT(Internet of Things)/images/06-01.png>){#fig:06-01 height=50mm}
 
-![結果](<./documents/04/0205-Node-REDでIoT(Internet of Things)/images/06-02.png>){#fig:06-02 height=50mm}
+```{#lst:awesome-code .js .numberLines caption="1つ目のfunction"}
+msg.payload = (msg.payload * 5000 / 1024 - 600 ) / 10;
+global.set("temperature", msg.payload);
+return msg;
+```
 
-<!-- ```{#lst:awesome-code .c .numberLines caption="任意の整数 x を受け取り, 液晶にその数値を表示させる関数を作成せよ."}
-void put_num1(int n) {
-  put_char(0x30 + n);
-}
-``` -->
+```{#lst:awesome-code .js .numberLines caption="2つ目のfunction"}
+msg.payload = global.get("temperature") || 0;
+return msg;
+```
+
+\clearpage
+
+```{#lst:awesome-code .html .numberLines caption="template (mustache)"}
+<html>
+  <body>
+    気温: {{payload}}
+
+    <script>
+      setTimeout(window.location.reload, 3000);
+    </script>
+  </body>
+</html>
+```
+
+![結果](<./documents/04/0205-Node-REDでIoT(Internet of Things)/images/06-02.png>){#fig:06-02 height=50mm}
 
 # 参考文献
 
