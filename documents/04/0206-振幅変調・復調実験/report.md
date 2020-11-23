@@ -14,8 +14,8 @@ metadata:
   others:
     date: 2020. 10. 14
     weather: 晴れ
-    temp:
-    wet:
+    temp: 28.0
+    wet: 59.0
   partners:
     collaborator1:
     collaborator2:

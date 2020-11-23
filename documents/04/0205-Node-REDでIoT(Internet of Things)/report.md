@@ -4,7 +4,7 @@ header-includes:
 metadata:
   reportInfo:
     subject: Node-REDでIoT(Internet of Things)
-    reportNo: 9
+    reportNo: 5
   writer:
     class: E4
     no: 14
@@ -14,8 +14,8 @@ metadata:
   others:
     date: 2020. 11. 18
     weather: 晴れ
-    temp:
-    wet:
+    temp: 24.0
+    wet: 65.5
   partners:
     collaborator1:
     collaborator2:

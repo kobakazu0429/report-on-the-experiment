@@ -14,8 +14,8 @@ metadata:
   others:
     date: 2020. 11. 18
     weather: 晴れ
-    temp:
-    wet:
+    temp: 24.0
+    wet: 65.5
   partners:
     collaborator1:
     collaborator2:
