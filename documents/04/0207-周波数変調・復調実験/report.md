@@ -290,3 +290,9 @@ metadata:
 ![$4 \unit{kHz}, 0.52 \unit{V}$](./documents/04/0207-周波数変調・復調実験/images/6.5/4k/NewFile5.png){#fig:filename height=50mm}
 
 ![$4 \unit{kHz}, 1.04 \unit{V}$](./documents/04/0207-周波数変調・復調実験/images/6.5/4k/NewFile6.png){#fig:filename height=50mm}
+
+\clearpage
+
+# 参考文献
+
+- やさしく学ぶ, 第二級陸上特殊無線技士試験 (2019)

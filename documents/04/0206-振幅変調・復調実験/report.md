@@ -336,3 +336,9 @@ R3C3 & さらにこもっているような音がした \\ \hline
    ![fs: 2[kHz], Vpp: 3[V]](<./documents/04/0206-振幅変調・復調実験/images/6.3/6.3.4(8)/2k.png>){height=50mm #fig:3-8-2k}
 
    ![fs: 3[kHz], Vpp: 3[V]](<./documents/04/0206-振幅変調・復調実験/images/6.3/6.3.4(8)/3k.png>){height=50mm #fig:3-8-3k}
+
+\clearpage
+
+# 参考文献
+
+- やさしく学ぶ, 第二級陸上特殊無線技士試験 (2019)
