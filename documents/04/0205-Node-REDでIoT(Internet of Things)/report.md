@@ -35,13 +35,20 @@ National Semiconductor 製の単一正電源動作温度センサ IC, LM61 を�
 
 ![ノード](<./documents/04/0205-Node-REDでIoT(Internet of Things)/images/06-01.png>){#fig:06-01 height=50mm}
 
-```{#lst:awesome-code .js .numberLines caption="1つ目のfunction"}
+$$T = \frac{\frac{5000}{2^{10}} V_{out} - 600}{10}$$
+
+温度センサの出力電圧 $V_{out}$ と摂氏温度 $T$ の関係は上式となることから [@lst:stored] は次のようにかける.
+
+```{#lst:stored .js .numberLines caption="1つ目のfunction"}
 msg.payload = (msg.payload * 5000 / 1024 - 600 ) / 10;
+// フロー全体で共通のグローバル変数に`temperature` という変数名で気温を格納する.
 global.set("temperature", msg.payload);
 return msg;
 ```
 
 ```{#lst:awesome-code .js .numberLines caption="2つ目のfunction"}
+// コード1 の値を取得し代入する.
+// 値が格納されていない場合は 0 を代入する.
 msg.payload = global.get("temperature") || 0;
 return msg;
 ```
