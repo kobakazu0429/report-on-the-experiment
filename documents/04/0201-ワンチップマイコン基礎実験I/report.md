@@ -50,8 +50,10 @@ PIC16F84A についてプログラム方法と基本的な入出力制御の習�
 ```{#lst:awesome-code .c .numberLines caption="タイマー"}
   COUNTER1 EQU 0x0C  ;作業用変数の設定
   COUNTER2 EQU 0x0D  ;汎用ファイルレジスタ0Chから
+  COUNTER3 EQU 0x0E
 
-  WAIT clrf COUNTER1 ;変数1をクリア
+WAIT
+  clrf COUNTER1 ;変数1をクリア
 
 WAIT1
   clrf COUNTER2      ;変数2をクリア
@@ -72,11 +74,73 @@ WAIT2
 ```
 
 ```{#lst:awesome-code .asm .numberLines caption="[課題2] List3 の点滅周期を約1秒になるように調整したプログラムを作成せよ"}
-TODO
+MAIN
+  bsf PORTB, 0 ;0番目のLED点灯
+  call WAIT    ;時間待ちサブルーチン呼び出し
+  bcf PORTB, 0 ;0番目のLED消灯
+  call WAIT
+  goto MAIN
+
+WAIT
+  clrf COUNTER1
+
+WAIT1
+  clrf COUNTER2
+  call WAIT2
+  decfsz COUNTER1, 1
+  goto WAIT1
+  return
+
+WAIT2
+  clrf COUNTER3
+  movlw 0x05
+  movwf COUNTER3
+  call WAIT3
+  decfsz COUNTER2, 1
+  goto WAIT2
+  return
+
+WAIT3
+  decfsz COUNTER3, 1
+  goto WAIT3
+  return
+
+END
 ```
 
 ```{#lst:awesome-code .asm .numberLines caption="[課題3] List3 の点滅を10回に規定して動作させるプログラムを作成せよ"}
-TODO
+;init
+  movlw D'10'
+  movwf COUNTER3
+
+MAIN
+  bsf PORTB,0
+  call WAIT
+  bcf PORTB,0
+  call WAIT
+  decfsz COUNTER3,1
+  goto MAIN
+  goto STP
+
+STP
+  goto STP
+
+WAIT
+  clrf COUNTER1
+
+WAIT1
+  clrf COUNTER2
+  call WAIT2
+  decfsz COUNTER1, 1
+  goto WAIT1
+  return
+
+WAIT2
+  decfsz COUNTER2, 1
+  goto WAIT2
+  return
+
+END
 ```
 
 ```{#lst:awesome-code .asm .numberLines caption="[課題4] RB0 から RB7 まで順次点灯するように List4 を書き換えよ"}
@@ -224,6 +288,7 @@ MAIN
 
    このようにプルダウン, プルアップ抵抗には電圧を安定化させるための役割があるが, 入力として使う場合には閾値を上回ったり, 逆に下回ってしまわないように適切な電圧値, 電流値を得る必要がある.
    したがってマイコンや IC のデータシートなどを読み抵抗値を決定しなければならない.
+   \clearpage
 
 1. マイコンの出力端子では, 電流をプルダウン抵抗に出力するソース出力と電流をプルアップ抵抗などから吸い込むシンク出力の両方もしくはどちらか一方が可能となっている.
    PIC16F84A の端子内部の構造を調べ, 各端子を出力設定とした場合にどのような出力が可能か調べよ(トーテムポール型とオープンドレイン型について理解すること).
@@ -244,6 +309,7 @@ MAIN
      - 出力はローの出力しかできない
      - 信号線をハイにするためにはプルアップ抵抗が必要
      - シンクのみ
+       \clearpage
 
    PIC16F84A ではデータシートを見ると RA, RB ピンは次の表のようになっている.
 
