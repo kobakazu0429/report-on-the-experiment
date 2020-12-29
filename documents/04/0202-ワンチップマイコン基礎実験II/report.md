@@ -153,8 +153,131 @@ WAIT1
   return             ;結果が0ならばスキップしこの行を実行
 ```
 
-```{#lst:awesome-code .asm .numberLines caption="[課題4] メロディを作成せよ"}
-TODO
+```{#lst:awesome-code .asm .numberLines caption="[課題4] メロディを作成せよ(その1)"}
+  COUNTER1 EQU 0x0C;
+  COUNTER2 EQU 0x0D;
+  COUNTER3 EQU 0x0E;
+  COUNTER4 EQU 0x0F;
+  COUNTER5 EQU 0x10;
+  COUNTER6 EQU 0x11;
+  COUNTER7 EQU 0x12;
+  COUNTER8 EQU 0x13;
+  COUNTER9 EQU 0x14;
+
+  ORG 0x000
+
+  bsf STATUS, RP0
+  clrf TRISA
+  bcf STATUS, RP0
+  clrf PORTA
+
+MAIN
+  call PLAY_C
+  call PLAY_D
+  call PLAY_E
+  goto MAIN
+
+;==== IF ====
+PLAY_C
+  clrf COUNTER7
+  call PLAY_C_
+
+PLAY_D
+  clrf COUNTER8
+  call PLAY_D_
+
+PLAY_E
+  clrf COUNTER9
+  call PLAY_E_
+```
+
+```{#lst:awesome-code .asm .numberLines caption="[課題4] メロディを作成せよ(その2)"}
+;==== private methods ====
+PLAY_C_
+  bsf PORTA, 3
+  call WAIT1
+  bcf PORTA, 3
+  call WAIT1
+  decfsz COUNTER7, 1
+  goto PLAY_C_
+  return
+
+PLAY_D_
+  bsf PORTA, 3
+  call WAIT4
+  bcf PORTA, 3
+  call WAIT4
+  decfsz COUNTER8, 1
+  goto PLAY_D_
+  return
+
+PLAY_E_
+  bsf PORTA, 3
+  call WAIT7
+  bcf PORTA, 3
+  call WAIT7
+  decfsz COUNTER9, 1
+  goto PLAY_E_
+  return
+
+;==== timer ====
+;==== timer - C ====
+WAIT1
+  movlw D'176'
+  movwf COUNTER1
+
+WAIT2
+  movlw D'02'
+  movwf COUNTER2
+  call WAIT3
+  decfsz COUNTER1, 1
+  goto WAIT2
+  return
+
+WAIT3
+  decfsz COUNTER2, 1
+  goto WAIT3
+  return
+```
+
+```{#lst:awesome-code .asm .numberLines caption="[課題4] メロディを作成せよ(その3)"}
+;==== timer - D ====
+
+WAIT4
+  movlw D'160'
+  movwf COUNTER3
+
+WAIT5
+  movlw D'02'
+  movwf COUNTER4
+  call WAIT6
+  decfsz COUNTER3, 1
+  goto WAIT5
+  return
+
+WAIT6
+  decfsz COUNTER4, 1
+  goto WAIT6
+  return
+
+;==== timer - E ====
+
+WAIT7
+  movlw D'144'
+  movwf COUNTER5
+
+WAIT8
+  movlw D'02'
+  movwf COUNTER6
+  call WAIT9
+  decfsz COUNTER5, 1
+  goto WAIT8
+  return
+
+WAIT9
+  decfsz COUNTER6, 1
+  goto WAIT9
+  return
 ```
 
 \clearpage
