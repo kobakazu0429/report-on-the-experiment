@@ -45,11 +45,37 @@ So that, your report will be pdf file in the folder.
 - pandoc-crossref
 - lualatex
 
+```shell
+# on Mac
+brew install pandoc
+brew install pandoc-crossref
+
+# if occurred, pandoc-crossref was compiled with pandoc 2.18 but is being run through 2.19.2.
+cd /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/
+git log --oneline pandoc.rb
+# 13c29ad3a1c pandoc 2.19
+# 25d00a26e0e pandoc: update 2.18 bottle.
+# c243cda1645 pandoc 2.18
+# 418b6985490 pandoc: update 2.17.1.1 bottle.
+git checkout 25d00a26e0e pandoc.rb
+brew unlink pandoc
+brew install pandoc
+
+brew install --cask mactex-no-gui
+sudo tlmgr update --self --all
+sudo tlmgr paper a4
+sudo tlmgr install collection-langjapanese
+```
+
 ## Original Notations
 
 ### Units
 
 - `$f \unit{Hz}$` -> $f [Hz]$
+
+↓06〜
+
+- `$f \un{Hz}$` -> $f [Hz]$
 
 ### Roman Numbers
 
