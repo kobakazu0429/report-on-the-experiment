@@ -23,7 +23,7 @@ function exec_stdout() {
   echo "$ ./main" >> $out
   $CC $target $OPTIONS
   ./main >> $out
-  
+
   echo "done $out"
 }
 
@@ -56,6 +56,9 @@ function main() {
   done
 
   p g1g.c g1g-a0.1.patch
+  p g2g.c g2g-x0.patch
+  p g2g.c g2g-x10.patch
+  p g3g.c g3g-x00.8-x10.2.patch
 
   cleanup
 }
