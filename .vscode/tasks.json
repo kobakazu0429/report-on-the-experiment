@@ -9,6 +9,10 @@
       "command": "pandoc",
       "args": [
         "-F",
+        "${workspaceFolder}/import-code.js",
+        "-M",
+        "base=${fileDirname}/src/",
+        "-F",
         "pandoc-crossref",
         "-M",
         "crossrefYaml=${workspaceFolder}/crossref_config.yaml",
