@@ -48,6 +48,10 @@ metadata:
 
 ```
 
+```{#lst:g1-out caption="g1の最小値を求めた結果" include=out/g1g.c.out}
+
+```
+
 ## 複数の解を持つ関数の勾配法による解の発見
 
 ```{#lst:g2 .c .numberLines caption="勾配法による関数g2解の探索(g2.c)" include=g2.c}
@@ -57,6 +61,18 @@ metadata:
 ![関数g2の値](./documents/06/勾配法と探索法の比較と離散化による誤差の測定/images/g2.png){#fig:g2 height=50mm}
 
 ```{#lst:g2g .c .numberLines caption="勾配法による関数g2解の探索(g2g.c)" include=g2g.c}
+
+```
+
+```{#lst:g2g-out caption="初期値にx1=-10を選び回を探索した結果" include=out/g2g.c.out}
+
+```
+
+```{#lst:g2g-x10-out caption="初期値にx1=10を選び回を探索した結果" include=out/g2g-x10.patch.out}
+
+```
+
+```{#lst:g2g-x0-out caption="初期値にx1=0を選び回を探索した結果" include=out/g2g-x0.patch.out}
 
 ```
 
@@ -72,7 +88,20 @@ metadata:
 
 ```
 
-```{#lst:g3g-result .sh caption="g3g.cの初期値x0=-10, x1=-10により探索を行った結果"}
-$ ./main.exe
-x0=
+```{#lst:g3g-out caption="g3g.cの初期値x0=-10, x1=-10により探索を行った結果" include=out/g3g.c.out}
+
+```
+
+```{#lst:g3g-x00.8-x10.2-out caption="g3g.cの初期値x0=-0.8, x1=0.2により探索を行った結果" include=out/g3g-x00.8-x10.2.patch.out}
+
+```
+
+## GA による探索を用いた解法
+
+```{#lst:ga .c .numberLines caption="GAによる解の探索" include=ga.c}
+
+```
+
+```{#lst:ga-out caption="GAにより探索を行った結果" include=out/ga.c.out lines=1,6003}
+
 ```

@@ -16,12 +16,29 @@ const traverser = (data) => {
       if (!codeBlock) return obj;
 
       const meta = codeBlock.flat(Infinity);
+
       const includeIndex = meta.findIndex((v) => v === "include");
       if (includeIndex === -1) return obj;
 
       const filePath = path.resolve(base, meta[includeIndex + 1]);
       const src = fs.readFileSync(filePath, "utf-8");
-      codeBlock[codeBlock.length - 1] = src;
+
+      const linesIndex = meta.findIndex((v) => v === "lines");
+      if (linesIndex === -1) {
+        codeBlock[codeBlock.length - 1] = src;
+      } else {
+        const lines = meta[linesIndex + 1].split(",");
+        const srcLines = src.split("\n");
+        const splitedSrc = lines.map((line) => {
+          if (line.includes("-")) {
+            const [start, end] = line.split("-").map((v) => parseInt(v, 10));
+            return srcLines.slice(start - 1, end);
+          } else {
+            return srcLines[parseInt(line, 10) - 1];
+          }
+        });
+        codeBlock[codeBlock.length - 1] = splitedSrc.flat(Infinity).join("\n");
+      }
       return obj;
     }
   });
