@@ -62,6 +62,8 @@ function main() {
   done
 
   p g1g.c g1g-a0.1.patch
+  p g1g.c g1g-a0.9.patch
+  p g1g.c g1g-a0.01.patch
   p g2g.c g2g-x0.patch
   p g2g.c g2g-x10.patch
   p g3g.c g3g-x00.8-x10.2.patch

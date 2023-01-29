@@ -44,6 +44,7 @@ So that, your report will be pdf file in the folder.
 - pandoc
 - pandoc-crossref
 - lualatex
+- node
 
 ```shell
 # on Mac
@@ -80,3 +81,7 @@ sudo tlmgr install collection-langjapanese
 ### Roman Numbers
 
 - `\rom{1}` -> I
+
+## Memo
+
+`\`\`\`{#lst:ref .c .numberLines caption="" include=(src/)<filename> startFrom=10 lines=1-2,4,8-}\`\`\``
