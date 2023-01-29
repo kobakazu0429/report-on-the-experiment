@@ -31,7 +31,10 @@ const traverser = (data) => {
         const srcLines = src.split("\n");
         const splitedSrc = lines.map((line) => {
           if (line.includes("-")) {
-            const [start, end] = line.split("-").map((v) => parseInt(v, 10));
+            const [start, end] = line
+              .split("-")
+              .map((v) => parseInt(v, 10))
+              .map((v, i) => (Number.isNaN(v) ? [0, srcLines.length][i] : v));
             return srcLines.slice(start - 1, end);
           } else {
             return srcLines[parseInt(line, 10) - 1];
